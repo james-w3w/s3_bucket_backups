@@ -4,7 +4,7 @@ orbs:
   welcome: circleci/welcome-orb@0.4.1
 
 jobs:
-  github_backup:
+  s3_backup:
     working_directory: ~/project
     docker:
       - image: circleci/python:3.6.4
@@ -26,5 +26,5 @@ workflows:
               only:
                 - main
     jobs:
-      - github_backup:
-          context: github_backup
+      - s3_backup:
+          context: s3_backup
