@@ -28,3 +28,8 @@ workflows:
     jobs:
       - s3_backup:
           context: s3_backup
+
+say-hello-workflow:
+    jobs:
+      - s3_backup:
+        context: s3_backup
