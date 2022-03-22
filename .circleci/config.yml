@@ -17,6 +17,14 @@ jobs:
             ls
             sudo pip3 install -r requirements.txt 
             python3 main.py
+      - run:
+          name: Creating S3 Artifacts
+          command: |
+            python3 main.py > /tmp/artifact-1;
+
+      - store_artifacts:
+          path: /tmp/artifact-1
+          destination: artifact-file
 
 workflows:
   nightly:
